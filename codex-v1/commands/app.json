@@ -1,0 +1,37 @@
+{
+  "name": "codex-v1",
+  "version": "1.0.0",
+  "description": "A powerful WhatsApp bot built using Baileys with features like ethical hacking tools, AI commands, group management, rizz/fun commands, bug command , hack command , ban command and developer tools.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "Cœdēx Tech",
+  "contributors": [
+    {
+      "name": "Magical Ramzy",
+      "contact info": "+233 50 539 0222"
+    }
+  ],
+  "keywords": [
+    "whatsapp-bot",
+    "baileys",
+    "ai-bot",
+    "hacking-tools",
+    "rizz",
+    "fun",
+    "automation",
+    "cœdēx-tech"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.6.0",
+    "axios": "^1.6.7",
+    "chalk": "^5.3.0",
+    "moment": "^2.29.4",
+    "qrcode-terminal": "^0.12.0"
+  }
+}

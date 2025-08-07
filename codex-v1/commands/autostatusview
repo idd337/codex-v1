@@ -1,0 +1,40 @@
+const { default: makeWASocket, useSingleFileAuthState, fetchLatestBaileysVersion } = require('@adiwajshing/baileys');
+const { state, saveState } = useSingleFileAuthState('./auth_info.json');
+
+async function startBot() {
+  const { version } = await fetchLatestBaileysVersion();
+  const sock = makeWASocket({
+    version,
+    auth: state,
+    printQRInTerminal: true,
+  });
+
+  sock.ev.on('connection.update', (update) => {
+    const { connection, lastDisconnect } = update;
+    if(connection === 'close') {
+      console.log('Disconnected. Reconnecting...');
+      startBot();
+    } else if(connection === 'open') {
+      console.log('Connection opened!');
+    }
+  });
+
+  sock.ev.on('presence.update', async (update) => {
+    // Listen for status updates from contacts
+    for(const [id, pres] of Object.entries(update)) {
+    if(pres.status === 'unread') {
+        console.log(`New status from ${id}`);
+        // Your code to "view" and "like" status here
+        // Note: Baileys does not officially support status reactions yet.
+        // But you can send a custom message or reaction as workaround.
+
+        // Example: send a reply message as a 'like'
+        await sock.sendMessage(id, { text: '🔥🔥🔥' });
+      }
+    }
+  });
+
+  sock.ev.on('creds.update', saveState);
+}
+
+startBot();

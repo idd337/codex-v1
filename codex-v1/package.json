@@ -1,0 +1,16 @@
+{
+  "name": "codex-v1",
+  "version": "1.0.0",
+  "description": "A simple WhatsApp bot by CŒDĒX Tech",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["whatsapp", "bot", "codex", "automation"],
+  "author": "CŒDĒX Tech",
+  "license": "MIT",
+  "dependencies": {
+    "baileys": "^6.5.0",
+    "moment": "^2.29.4"
+  }
+}
