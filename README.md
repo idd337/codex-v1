@@ -52,7 +52,7 @@ Type `/menu` or `!menu` in WhatsApp to see this menu live:
 🛠️ Installation & Setup
 
 ```bash
-git clone https://github.com/yourusername/codex-v1.git
+git clone https://github.com/idd337/codex-v1.git
 cd codex-v1
 npm install
 Configure your bot settings in config.js
